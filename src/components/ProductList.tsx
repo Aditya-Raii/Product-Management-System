@@ -80,7 +80,7 @@ const ProductList = () => {
               <TableRow key={product.id}>
                 <TableCell className="font-medium">{product.name}</TableCell>
                 <TableCell>{product.description}</TableCell>
-                <TableCell>${product.price.toFixed(2)}</TableCell>
+                <TableCell>₹{product.price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                 <TableCell>
                   <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-sm ${
                     product.inStock 
@@ -127,3 +127,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
